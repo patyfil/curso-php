@@ -1,0 +1,168 @@
+/* Estilo CSS para a página login.php */
+@import url('https://fonts.googleapis.com/css2? family = Ubuntu: wght @ 500 & display = swap');
+
+:root {
+    --hover-color: #C2B9A5;
+    --font-Esc: #262323;
+    --botao: #3E537A;
+    --nuvem: #C2B9A5;
+    --fundo-escuro: #3E537A;
+    --fundo-medio: #5977AE;
+    --fundo-claro: #C2D3F2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    
+    background: url(../img/fundo19.jpg) no-repeat;
+    background-size: cover;
+    /* background-color: var(--fundo-escuro); */
+}
+
+#interface {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 50%;
+    height: 100vh;
+    /* background: var(--fundo-escuro); */
+}
+
+#areaLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    height: 100vh;
+    /* background: linear-gradient(to left, var(--fundo-medio), var(--fundo-escuro)); */
+
+}
+
+h1 {
+    font-size: 4.5em;
+    color: white;
+    padding-bottom: 50px;
+}
+
+#boxLogin {
+    border-radius: 25px;
+    width: 50%;
+    height: 330px;
+    background: white;
+}
+
+#areaCampos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.campos {
+    width: 75%;
+    height: 45px;
+    margin: 20px auto;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    color: var(--font-Esc);
+}
+
+::-webkit-input-placeholder {
+    color: var(--font-Esc);
+}
+
+.campos {
+    border-bottom: var(--font-Esc) 1.5px solid;
+}
+
+#manterConectado {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: 75%;
+}
+
+#manterConectado label {
+    color: var(--font-Esc);
+}
+
+#botao {
+    width: 75%;
+    height: 45px;
+    margin: 20px auto;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 15px;
+    background-color: var(--botao);
+}
+
+#botao:hover {
+    background-color: var(--hover-color);
+    cursor: pointer;
+}
+
+p {
+    color: var(--font-Esc);
+}
+
+a {
+    color: var(--font-Esc);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--hover-color);
+    text-decoration: underline;
+}
+
+@media (max-width: 950px) {
+    #interface {
+        flex-direction: column;
+    }
+
+    #logo {
+        width: 100%;
+        height: auto;
+        padding-top: 5em;
+    }
+
+    #areaLogin {
+        width: 100%;
+        height: 85vh;
+    }
+}
+
+@media (max-width: 600px) {
+    #boxLogin {
+        width: 85%;
+        height: 370px;
+    }
+}
+
+@media (max-width: 450px) {
+    h1 {
+        font-size: 3.5em;
+    }
+}
+
+@media (max-width: 350px) {
+    h1 {
+        font-size: 2.5em;
+    }
+}

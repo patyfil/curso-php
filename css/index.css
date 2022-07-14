@@ -1,0 +1,454 @@
+/* Estilo CSS para a página index.php */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+
+/* =========== Estilo Geral ===========*/
+:root {
+    --hover-color: #C2B9A5;
+    --font-Esc: #262323;
+    --botao: #3E537A;
+    --nuvem: #C2B9A5;
+    --fundo-escuro: #3E537A;
+    --fundo-medio: #5977AE;
+    --fundo-claro: #C2D3F2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    width: 100%;
+    background: #fafafa;
+    position: relative;
+}
+
+/* ========= Estilo do menu =========*/
+.navbar {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    border-bottom: 1px solid #d5ccbd;
+    display: flex;
+}
+
+nav .navbar {
+    display: flex;
+    /* flex para dividir o menu em 3 partes horizontais */
+    justify-content: space-around;
+    padding: 2px;
+}
+
+/* As 3 partes do menu são: */
+.navEsq,
+.navCentro,
+.navDir {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* logo WeCode */
+.navEsq h1 {
+    margin: 0;
+    font-size: 40px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    color: var(--fundo-escuro);
+}
+
+/* .item são todos os ícones do menu */
+.item {
+    position: relative;
+}
+
+/* Efeito para aparecer a legenda dos ícones quando passar o mouse em cima */
+.item:hover>.tooltip {
+    opacity: 1;
+}
+
+/* Configuração das Legendas quando passa o mouse em cima dos ícones */
+.tooltip {
+    position: absolute;
+    padding: 5px 5px;
+    white-space: nowrap;
+    left: 50%;
+    top: 30px;
+    font-size: 14px;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--fundo-claro);
+}
+
+/* Configuração dos ícones */
+.icon {
+    font-size: 30px;
+    position: relative;
+    cursor: pointer;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 10px;
+}
+
+/* Cor dos ícones */
+.icon a {
+    color: var(--fundo-escuro);
+}
+
+/* Cor dos ícones quando passar o mouse em cima */
+.icon a:hover {
+    color: var(--fundo-claro);
+}
+
+/* FIM da Legenda / tooltip */
+
+/* ========= Estilo da barra de pesquisa =========*/
+.pesquisar-box {
+    position: absolute;
+    align-items: center;
+    width: 200px;
+    height: 30px;
+    background: #fafafa;
+    border: 1px solid #d5ccbd;
+    border-radius: 2px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.pesquisar-box::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* =========Estilo da sessão do status=========*/
+
+.nomeuser h1 {
+    text-transform: capitalize;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    color: var(--fundo-medio);
+    font-size: 40px;
+}
+
+.principal-1 {
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.involucro {
+    width: 70%;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-gap: 30px;
+    padding: 1%;
+}
+
+.col-esquerda {
+    display: flex;
+    flex-direction: column;
+}
+
+.status-involucro {
+    width: 100%;
+    height: 150px;
+    background: #fff;
+    border: 1px solid #d5ccbd;
+    border-radius: 2px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.status-involucro::-webkit-scrollbar {
+    display:flexbox;
+}
+
+.status-card {
+    flex: 0 0 auto;
+    width: 80px;
+    max-width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 10px;
+}
+
+
+.status-card p {
+    margin: 0;
+}
+
+.perfil-pic {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 3px;
+    background: linear-gradient(45deg, #d5ccbd, #6f89ae 80%);
+}
+
+.perfil-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.nomeUsuario {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 5px;
+    color: rgba(0, 0, 0, 0.5)
+}
+
+
+
+/* ========= Estilo da Sessao - Posts (coluna esquerda) =========*/
+
+.principal-2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.publicacao {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border: 1px solid #d5ccbd;
+    margin-top: 40px;
+}
+
+.info {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.info .nomeUsuario {
+    width: auto;
+    font-weight: bold;
+    color: #000;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.info .opcoes {
+    height: 10px;
+    cursor: pointer;
+}
+
+.info .usuario {
+    display: flex;
+    align-items: center;
+}
+
+.info .perfil-pic {
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    background: none;
+}
+
+.info .perfil-pic img {
+    border: none;
+}
+
+.publicar-imagem {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.publicar-conteudo {
+    width: 100%;
+    padding: 20px;
+}
+
+.descricao span {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.publicado-tempo {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+}
+
+.comentario-contenitor {
+    width: 100%;
+    height: 50px;
+    border-radius: 1px solid #d5ccbd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comentario-contenitor .icone {
+    height: 30px;
+    margin-left: 20px;
+}
+
+.comentario-box {
+    width: 80%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding-left: 10px ;
+}
+
+.comentario-btn,
+.acao-btn {
+    width: 70px;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: #6f89ae;
+    opacity: 1;
+    font-weight: 900;
+    margin-right: 20px;
+}
+
+
+.reacao-contenitor {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    margin-top: -20px;
+    align-items: center;
+}
+
+.reacao-contenitor .icone {
+    height: 25px;
+    margin: 0;
+    margin-right: 20px;
+}
+
+.reacao-contenitor .icone.salvar {
+    margin-left: auto;
+}
+
+
+/* ========= Estilo da Sessao - Recomendações (coluna-direita) =========*/
+
+.col-direita {
+    width: 20%;
+    padding: 20px;
+    top: 100px;
+    bottom: 100px;
+    right: 200px;
+    padding: 15px;
+    position: fixed;
+}
+
+.perfil-ficha {
+    width: 100%;
+    display: flex;
+    justify-content:baseline;
+    align-items:inherit;
+    margin: 0px;
+}
+
+.perfil-ficha .acao-btn {
+    display: flex;
+    width: 100%;
+    opacity: 1;
+    font-size: 12px;
+    margin: 0;
+    justify-content: end;
+
+}
+
+.perfil-ficha .perfil-pic {
+    flex: 0 0 auto;
+    padding: 0;
+    background: none;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.perfil-ficha:first-child .perfil-pic {
+    width: 70px;
+    height: 70px;
+}
+
+.perfil-ficha .perfil-pic img {
+    border: none;
+}
+
+.perfil-ficha .nomeUsuario {
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+}
+
+.sub-texto {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 0px;
+    margin-bottom: 25px;
+}
+
+
+
+.sugestao-texto {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+@media (max-width: 1100px) {
+
+    .col-direita,
+    .pesquisar-box {
+        display: none;
+    }
+
+    .capsula,
+    .involucro {
+        width: 90%;
+
+    }
+
+    .involucro {
+        display: block;
+    }
+}
+
+@media (max-width: 500px) {
+    .itens .icone {
+        margin: 0 5px;
+    }
+
+    .publicar-imagem {
+        height: 300px;
+    }
+}

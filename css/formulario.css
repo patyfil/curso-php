@@ -1,0 +1,138 @@
+/* Estilo CSS para formulario.html */
+@import url("https://fonts.googleapis.com/css2? family = Ubuntu: wght @ 500 & display = swap");
+
+:root {
+  --hover-color: #C2B9A5;
+  --font-Esc: #262323;
+  --botao: #3E537A;
+  --nuvem: #C2B9A5;
+  --fundo-escuro: #3E537A;
+  --fundo-medio: #5977AE;
+  --fundo-claro: #C2D3F2;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  color: var(--fundo-escuro);
+  background-color: var(--fundo-medio);
+  background-size: cover;
+}
+
+label,
+p,
+b {
+  color: var(--fundo-escuro);
+}
+
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--fundo-claro);
+  padding: 25px;
+  border-radius: 15px;
+  width: 40%;
+}
+
+fieldset {
+  border: 3px solid var(--fundo-claro);
+}
+
+legend {
+  border: 5px solid var(--fundo-claro);
+  padding: 20px;
+  text-align: center;
+  background-color: var(--fundo-medio);
+  border-radius: 30px;
+}
+
+/* Fonte "Cadastro de Usuário" */
+legend b {
+  color: white;
+  font-size: 26px;
+}
+
+.inputBox {
+  position: relative;
+}
+
+/* características da fonte digitada nos campos */
+.inputUser {
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  color: var(--fundo-escuro);
+  font-size: 18px;
+  width: 100%;
+  /* letter-spacing: 2px; */
+  padding: 5px;
+}
+
+.labelInput {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  pointer-events: none;
+  transition: 0.5s;
+  color: var(--fundo-escuro);
+}
+
+/* Letras das Legendas dos campos */
+.inputUser:focus~.labelInput,
+.inputUser:valid~.labelInput {
+  top: -10px;
+  font-size: 14px;
+  color: white;
+}
+
+#data_nascimento {
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+}
+
+#botao {
+  background: var(--fundo-escuro);
+  text-align: center;
+  width: 10%;
+  border: none;
+  padding: 10px;
+  margin: 1%;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+#botao:hover {
+  background: var(--nuvem);
+  box-shadow: 0.3em 0.3em 0.3em #999;
+}
+
+#submit {
+  background-image: linear-gradient(to right,
+      var(--fundo-escuro),
+      var(--fundo-medio));
+  width: 100%;
+  border: none;
+  padding: 15px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#submit:hover {
+  background: var(--nuvem);
+  box-shadow: 0.3em 0.3em 0.3em #999;
+}
+
+@media (max-width: 500px) {
+  #botao {
+    width: 20%;
+  }
+}
