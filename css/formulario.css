@@ -16,6 +16,7 @@ body {
   color: var(--fundo-escuro);
   background-color: var(--fundo-medio);
   background-size: cover;
+  height: 100vh;
 }
 
 label,
@@ -50,7 +51,7 @@ legend {
 /* Fonte "Cadastro de Usuário" */
 legend b {
   color: white;
-  font-size: 26px;
+  font-size: 24px;
 }
 
 .inputBox {
@@ -82,7 +83,7 @@ legend b {
 /* Letras das Legendas dos campos */
 .inputUser:focus~.labelInput,
 .inputUser:valid~.labelInput {
-  top: -10px;
+  top: -15px;
   font-size: 14px;
   color: white;
 }
@@ -131,8 +132,25 @@ legend b {
   box-shadow: 0.3em 0.3em 0.3em #999;
 }
 
-@media (max-width: 500px) {
-  #botao {
-    width: 20%;
+@media (max-width: 1000px) {
+
+  .tela {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .botao {
+    position: absolute;
+    display: block;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .box {
+    margin: 0;
+    width: 90%;
+    padding-bottom: 10px;
   }
 }

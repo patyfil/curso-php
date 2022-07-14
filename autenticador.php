@@ -41,9 +41,10 @@ if ($submit) {
         *iniciamos uma sessão e redirecionamos o usuário para o painel */ else {
         if (($user == $user1 && $pass == $pass1) || ($user == $user2 && $pass == $pass2)
             || ($user == $user3 && $pass == $pass3) || ($user == $user4 && $pass == $pass4)
+            || ($user == $user5 && $pass == $pass5)
         ) {
             session_start();
-            $_SESSION['usuario_logado'] = $nome;
+            $_SESSION['usuario_logado'] = $user;
             header("Location: index.php");
         }
         /* Se o usuario ou a senha não batem alertamos o usuario */ else {
