@@ -6,7 +6,7 @@ if (!isset($_SESSION['usuario_logado'])) {
     header('Location: login.php');
 }
 ?>
-<!--Esta é a página pessoal do usuario-->
+<!--Esta é a página pessoal do usuário-->
 <!DOCTYPE html />
 <html lang="pt-BR" />
 
