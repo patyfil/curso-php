@@ -1,4 +1,5 @@
 <?php
+session_start();
 /* Declaração de Variáveis */
 // $user = @$_POST['user'];
 // $pass = @$_POST['pass'];
@@ -25,7 +26,6 @@ $user5 = 'savana';
 $pass5 = '123';
 $nome5 = "Savana Tezza";
 
-session_start();
 /* Testa se o botão submit foi ativado */
 // if ($submit) {
 //     /* Se o campo usuário ou senha estiverem vazios geramos um alerta */

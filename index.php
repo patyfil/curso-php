@@ -5,6 +5,18 @@ session_start();
 if (!isset($_SESSION['usuario_logado'])) {
     header('Location: login.php');
 }
+
+// if (isset($_GET["acao"])) {
+//     if ($_GET["acao"] == "sair") {
+//         //para eliminar somente uma váriavel de sessão
+//         //unset($_SESSION["usuario_logado"]);
+//         session_destroy(); //mata tudo!
+//         echo "<script language=javascript>alert('Você saiu do sistema!');</script>";
+//         echo "<script language=javascript>window.location.replace('index.php');</script>";
+//         // header("Location: login.php");
+//     }
+// }
+
 ?>
 <!--Esta é a página pessoal do usuário-->
 <!DOCTYPE html />
@@ -59,6 +71,7 @@ if (!isset($_SESSION['usuario_logado'])) {
                 </div>
                 <div class="item">
                     <div class="tooltip">Sair</div>
+                    <!-- <div class="icon"><a href="index.php?acao=sair"><i class="fa-solid fa-right-from-bracket" alt="Botão Sair"></i></a></div> -->
                     <div class="icon"><a href="sair.php" class="icone"><i class="fa-solid fa-right-from-bracket" alt="Botão Sair"></i></a></div>
                 </div>
             </div>
