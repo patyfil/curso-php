@@ -16,7 +16,7 @@
 
 	<div id="interface">
 		<div id="logo">
-			<img src="img/mario.png" alt="" />
+			<img src="img/fundo.png" alt="" />
 		</div>
 		<div id="areaLogin">
 			<h1>WeCode</h1>

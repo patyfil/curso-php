@@ -19,9 +19,9 @@
 
 body {
 
-    background: url(../img/fundo19.jpg) no-repeat;
+    /* background: url(../img/fundo.jpg) no-repeat; */
     background-size: cover;
-    /* background-color: var(--fundo-escuro); */
+    background-color: var(--fundo-escuro);
 }
 
 #interface {
@@ -33,10 +33,10 @@ body {
 #logo {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: center;
     width: 50%;
     height: 100vh;
-    /* background: var(--fundo-escuro); */
+    background: var(--fundo-escuro);
 }
 
 #areaLogin {
@@ -46,7 +46,7 @@ body {
     flex-direction: column;
     width: 50%;
     height: 100vh;
-    /* background: linear-gradient(to left, var(--fundo-medio), var(--fundo-escuro)); */
+    background: linear-gradient(to left, var(--fundo-medio), var(--fundo-escuro));
 }
 
 h1 {

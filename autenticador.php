@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     /* Se o campo usuário ou senha estiverem vazios geramos um alerta */
     if ($user == "" || $pass == "") {
         echo "<script language=javascript>alert('Por favor, preencha todos os campos!');</script>";
-        echo "<script language=javascript>window.location.replace('index.php');</script>";
+        echo "<script language=javascript>window.location.replace('login.php');</script>";
     }
 
     if (($user == $user1 && $pass == $pass1) || ($user == $user2 && $pass == $pass2) || ($user == $user3 && $pass == $pass3)
