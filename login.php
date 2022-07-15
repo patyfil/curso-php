@@ -2,19 +2,22 @@
 <html lang="pt-br">
 
 <head>
-	<title>WeCode :: Login</title>
 	<meta charset="UTF-8" />
+	<title>WeCode :: Login</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<link rel="stylesheet" href="css/login.css" type="text/css" />
 	<!-- ícones  -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 	<script src="https://kit.fontawesome.com/7ae77fe78b.js" crossorigin="anonymous"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<!--  fontes  -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-	<div id="interface">
+	<section id="interface">
 		<div id="logo">
 			<img src="img/fundo.png" alt="" />
 		</div>
@@ -36,7 +39,7 @@
 				</form>
 			</div>
 		</div>
-	</div>
+	</section>
 </body>
 
 </html>
