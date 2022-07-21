@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-	<meta charset="UTF-8" />
+	<meta charset="UTF-8">
 	<title>WeCode :: Login</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<link rel="stylesheet" href="css/login.css" type="text/css" />
