@@ -123,6 +123,6 @@ class Pessoa
 
     public function adicionarAmigo($amigo) //único amigo
     {
-        $this->amigos = $amigo;
+        $this->amigos[] = $amigo;
     }
 }
