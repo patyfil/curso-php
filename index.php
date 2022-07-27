@@ -1,5 +1,5 @@
 <!-- Verificar se o Usuário está logado, 
-se não estiver, vai direciona para a pág de login(login.php) -->
+se não estiver, vai redirecionar para a pág de login(login.php) -->
 <?php
 session_start();
 if (!isset($_SESSION['usuario_logado'])) {

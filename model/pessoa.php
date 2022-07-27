@@ -10,7 +10,7 @@ class Pessoa
     private $foto;
     private $dataCadastro;
     private $publicacoes;
-    private $amigos;
+    private $amigos; //tipo Pessoa
 
     public function __construct()
     {

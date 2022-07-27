@@ -7,7 +7,7 @@ class Publicacao
     private $data;
     private $foto;
     private $texto;
-    private $curtidas; //lista
+    private $curtidas; //lista de pessoas que curtiram
 
     public function __construct($autor)
     {
