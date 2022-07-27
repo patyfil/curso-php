@@ -1,6 +1,6 @@
 <h1 <p align="left">Projeto da Disc.6 - Linguagem PHP</p> </h1>
 
-<h2 align="left">Tela de Login para uma rede social </h2>
+<h2 align="left">Rede social WeCode</h2>
 
 ###
 
