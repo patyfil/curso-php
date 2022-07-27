@@ -8,7 +8,7 @@ class PublicacaoDao extends AbstractDao {
         $sql = "insert into Publicacao (PublicacaoAutor, PublicacaoFoto, PublicacaoTexto, PublicacaoCurtidas) values (?, ?, ?, ?)";
         //Statement
         $st = $this->conexao->prepare($sql);
-        $st->bindValue(1, $obj->getAutor(), PDO::PARAM_STR);
+        $st->bindValue(1, $obj->getAutor()->getId(), PDO::PARAM_INT); 
         $st->bindValue(4, $obj->getFoto(), PDO::PARAM_STR);
         $st->bindValue(2, $obj->getTexto(), PDO::PARAM_STR);
         $st->bindValue(3, $obj->getCurtidas(), PDO::PARAM_STR);
