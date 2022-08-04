@@ -246,97 +246,59 @@ nav .navbar {
     justify-content: center;
 }
 
-.publicacao {
-    width: 100%;
-    height: auto;
-    background: #fff;
-    border: 1px solid #d5ccbd;
-    margin-top: 40px;
+.publish {
+    width: 450px;
+    height: 280px;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    border: none;
+    border-radius: 5px;
+    background: #FFF;
+    box-shadow: 0 0 6px #A1A1A1;
+
 }
 
-.info {
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+.publish textarea {
+    width: 400px;
+    height: 200px;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: #A1A1A1;
+    padding-left: 5px;
+    padding-top: 5px;
 }
 
-.info .nomeUsuario {
-    width: auto;
-    font-weight: bold;
-    color: #000;
-    font-size: 14px;
-    margin-left: 10px;
+.publish .icon{
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 40px;
+    cursor: pointer;
+    padding: 0;
 }
 
-.info .opcoes {
-    height: 10px;
+.publish input {
+    width: 90px;
+    height: 30px;
+    border-radius: 3px;
+    border: none;
+    background: #3E537A;
+    color: #FFF;
+    float: right;
+    margin-top: 10px;
+    margin-right: 25px;
     cursor: pointer;
 }
 
-.info .usuario {
-    display: flex;
-    align-items: center;
+.publish input:hover {
+    background: #001f3f;
 }
 
-.info .perfil-pic {
-    height: 40px;
-    width: 40px;
-    padding: 0;
-    background: none;
-}
 
-.info .perfil-pic img {
-    border: none;
-}
+/* ========= Estilo da Sessao - Recomendações (coluna-direita) =========*/
 
-.publicar-imagem {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-}
-
-.publicar-conteudo {
-    width: 100%;
-    padding: 20px;
-}
-
-.descricao span {
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-.publicado-tempo {
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 12px;
-}
-
-.comentario-contenitor {
-    width: 100%;
-    height: 50px;
-    border-radius: 1px solid #d5ccbd;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.comentario-contenitor .icone {
-    height: 30px;
-    margin-left: 20px;
-}
-
-.comentario-box {
-    width: 80%;
-    height: 100%;
-    border: none;
-    outline: none;
-    font-size: 14px;
-    padding-left: 10px;
-}
-
-.comentario-btn,
 .acao-btn {
     width: 70px;
     height: 100%;
@@ -350,28 +312,6 @@ nav .navbar {
     font-weight: 900;
     margin-right: 20px;
 }
-
-
-.reacao-contenitor {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    margin-top: -20px;
-    align-items: center;
-}
-
-.reacao-contenitor .icone {
-    height: 25px;
-    margin: 0;
-    margin-right: 20px;
-}
-
-.reacao-contenitor .icone.salvar {
-    margin-left: auto;
-}
-
-
-/* ========= Estilo da Sessao - Recomendações (coluna-direita) =========*/
 
 .col-direita {
     width: 20%;
@@ -432,6 +372,8 @@ nav .navbar {
     margin-top: 0px;
     margin-bottom: 25px;
 }
+
+
 
 .sugestao-texto {
     font-size: 14px;

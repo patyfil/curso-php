@@ -23,6 +23,7 @@ b {
   color: var(--fundo-escuro);
 }
 
+/* Toda caixa azul clara do formulário */
 .box {
   position: absolute;
   top: 50%;
@@ -30,6 +31,7 @@ b {
   transform: translate(-50%, -50%);
   background-color: var(--fundo-claro);
   padding: 25px;
+  margin: 10px auto;
   border-radius: 15px;
   width: 40%;
 }
@@ -38,12 +40,13 @@ fieldset {
   border: 3px solid var(--fundo-claro);
 }
 
+/* Campo "Cadastro de Usuário" */
 legend {
   border: 5px solid var(--fundo-claro);
+  border-radius: 30px;
   padding: 20px;
   text-align: center;
   background-color: var(--fundo-medio);
-  border-radius: 30px;
 }
 
 /* Fonte "Cadastro de Usuário" */
@@ -63,12 +66,12 @@ legend b {
   border-bottom: 1px solid white;
   outline: none;
   color: var(--fundo-escuro);
-  font-size: 18px;
+  font-size: 14px;
   width: 100%;
-  /* letter-spacing: 2px; */
-  padding: 5px;
+  padding: 3px;
 }
 
+/* Título dos Campos */
 .labelInput {
   position: absolute;
   top: 0px;
@@ -78,20 +81,64 @@ legend b {
   color: var(--fundo-escuro);
 }
 
-/* Letras das Legendas dos campos */
+/* Título dos Campos APÓS CLICADO */
 .inputUser:focus~.labelInput,
 .inputUser:valid~.labelInput {
-  top: -15px;
+  top: -20px;
   font-size: 14px;
   color: white;
 }
 
+/* Dividindo o campo senha em duas partes na mesma linha*/
+#senha1 {
+  width: 45%;
+  padding-right: 10%;
+  float: left;
+}
+#senha2 {
+  width: 45%;
+  float: right;
+}
+/* Dividindo o campo Cidade e Estado em duas partes na mesma linha*/
+#city {
+  width: 45%;
+  padding-right: 5%;
+  float: left;
+}
+#uf {
+  width: 45%;
+  float: right;
+}
+select#uf {
+  width: 55%;
+}
+
+.labFoto {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+#foto {
+  width: auto;
+  color: var(--fundo-escuro);
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  font-size: 100%;
+  box-shadow: inset 0px 0px 0 rgba(0, 0, 0, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, .25),
+    inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 0 rgba(255, 255, 255, .5);
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Fonte */
 #data_nascimento {
   border: none;
   padding: 8px;
   border-radius: 10px;
   outline: none;
   font-size: 15px;
+  color: var(--fundo-escuro);
 }
 
 #botao {

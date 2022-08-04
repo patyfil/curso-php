@@ -1,6 +1,51 @@
 <?php
 
 require_once "configuracoes.php";
+require_once "funcoes.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    try {
+        $publicacao = new Publicacao;
+        $dao = new PublicacaoDao;
+
+        //desafio: realizar o tratamentos verificando a existencia do valor
+        //desafio 2: usar DTO
+        $publicacao->setAutor($_POST["nome"]);
+        $publicacao->setTexto($_POST["texto"]);
+        $publicacao->setCurtida($_POST["curtida"]);
+        $publicacao->setData($_POST[""]);
+
+
+        if ($publicacao == "" || $foto == "") {
+            echo "<script language=javascript>alert('Por favor, preencha todos os campos!');</script>";
+            echo "<script language=javascript>window.location.replace('login.php');</script>";
+        }
+
+        $publicacao->setTexto($_POST["texto"]);
+
+        $foto = uploadFotos($_FILES["file"]);
+        $publicacao->setFoto($foto);
+
+        $dao->salvar($publicacao);
+
+        // echo "Usuário cadastrado com sucesso!";
+        echo "<script language=javascript>alert('Publicação postada com sucesso!');</script>";
+        echo "<script language=javascript>window.location.replace('index2.php');</script>";
+    } catch (\Throwable $th) {
+        echo "Erro: " . $th->getMessage();
+    }
+}
+
+
+
+// if (isset($_POST['publish'])){
+//     if ($_FILES['file']['error'] > 0){
+//         $texto = $_POST["texto"];
+//         $hoje = date("Y-m-d");
+
+
+// }
 
 function verificaLogado()
 {
@@ -27,7 +72,7 @@ $pessoa = verificaLogado(); //chamada da função
     <title>Home - Logado</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/index.css" type="text/css" />
+    <link rel="stylesheet" href="css/index2.css" type="text/css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
     <!-- ícones  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
@@ -135,119 +180,16 @@ $pessoa = verificaLogado(); //chamada da função
                     <h1>Seja bem-vindo(a)!</h1>
                     <h2><?php echo $pessoa->getNome(); ?></h2>
                 </div>
-                <div class="publicacao">
-                    <div class="info">
-                        <div class="usuario">
-                            <div class="perfil-pic"><img src="img/cheetara.jpg" alt="" /></div>
-                            <p class="nomeUsuario">Cheetara</p>
-                        </div>
-                        <img src="img/option.PNG" class="opcoes" alt="" />
-                    </div>
-                    <img src="img/grace-hopper.jpg" class="publicar-imagem" alt="" />
-                    <div class="publicar-conteudo">
-                        <div class="reacao-contenitor">
-                            <img src="img/like.PNG" class="icone" alt="" />
-                            <img src="img/comment.PNG" class="icone" alt="" />
-                            <img src="img/send.PNG" class="icone" alt="" />
-                            <img src="img/save.PNG" class="salvar icone" alt="" />
-                        </div>
-                        <p class="curtidas">2,011 curtidas</p>
-                        <p class="descricao"><span>Cheetara</span> Nós devemos muito à cientista da computação e almirante da
-                            Marinha dos EUA Grace Hopper. Em 1944, ela foi uma das primeiras programadoras do gigantesco computador Mark
-                            I, o primeiro computador eletromecânico automático de larga escala. Além disso, ela inventou o primeiro
-                            compilador para uma linguagem de programação e dirigiu o programa de desenvolvimento da primeira linguagem
-                            de programação voltada ao uso comercial. – o COBOL. O termo “bug” (inseto, em inglês) para indicar um
-                            problema técnico no computador foi cunhado por Hopper, quando em uma ocasião ela teve que remover uma
-                            mariposa de dentro da máquina.</p>
-                        <p class="publicado-tempo">Há 2 minutos</p>
-                    </div>
-                    <div class="comentario-contenitor">
-                        <img src="img/smile.PNG" class="icone" alt="" />
-                        <input type="text" class="comentario-box" placeholder="Adicione um comentário" />
-                        <button class="comentario-btn">Publicar</button>
-                    </div>
-                </div>
-                <div class="publicacao">
-                    <div class="info">
-                        <div class="usuario">
-                            <div class="perfil-pic"><img src="img/naruto.jpg" alt="" /></div>
-                            <p class="nomeUsuario">Naruto</p>
-                        </div>
-                        <img src="img/option.PNG" class="opcoes" alt="" />
-                    </div>
-                    <img src="img/index.php.png" class="publicar-imagem" alt="" />
-                    <div class="publicar-conteudo">
-                        <div class="reacao-contenitor">
-                            <img src="img/like.PNG" class="icone" alt="" />
-                            <img src="img/comment.PNG" class="icone" alt="" />
-                            <img src="img/send.PNG" class="icone" alt="">
-                            <img src="img/save.PNG" class="salvar icone" alt="" />
-                        </div>
-                        <p class="curtidas">1,873 curtidas</p>
-                        <p class="descricao"><span>Naruto </span>Ontem eu decidi reescrever um código que o professor ensinou na ultima aula
-                            o recurso do SESSION, SERVER e aprendi o que é "mockar"</p>
-                        <p class="publicado-tempo">Há 13 minutos</p>
-                    </div>
-                    <div class="comentario-contenitor">
-                        <img src="img/smile.PNG" class="icone" alt="" />
-                        <input type="text" class="comentario-box" placeholder="Adicione um comentário" />
-                        <button id="publicar" class="comentario-btn">Publicar</button>
-                    </div>
-                </div>
-                <div class="publicacao">
-                    <div class="info">
-                        <div class="usuario">
-                            <div class="perfil-pic"><img src="img/feiticera.jpg" alt="" /></div>
-                            <p class="nomeUsuario">Feiticera</p>
-                        </div>
-                        <img src="img/option.PNG" class="opcoes" alt="" />
-                    </div>
-                    <img src="img/codekid.jpg" class="publicar-imagem" alt="" />
-                    <div class="publicar-conteudo">
-                        <div class="reacao-contenitor">
-                            <img src="img/like.PNG" class="icone" alt="" />
-                            <img src="img/comment.PNG" class="icone" alt="" />
-                            <img src="img/send.PNG" class="icone" alt="" />
-                            <img src="img/save.PNG" class="salvar icone" alt="" />
-                        </div>
-                        <p class="curtidas">1,250 curtidas</p>
-                        <p class="descricao"><span>Feiticera</span> As crianças de hoje são nativas de um mundo completamente
-                            digital, e estão encontrando na programação ferramentas para construírem o mundo que querem habitar.</p>
-                        <p class="publicado-tempo">Há 34 minutos</p>
-                    </div>
-                    <div class="comentario-contenitor">
-                        <img src="img/smile.PNG" class="icone" alt="" />
-                        <input type="text" class="comentario-box" placeholder="Adicione um comentário" />
-                        <button id="publicar" class="comentario-btn">Publicar</button>
-                    </div>
-                </div>
-                <div class="publicacao">
-                    <div class="info">
-                        <div class="usuario">
-                            <div class="perfil-pic"><img src="img/Lion-O.png" alt="" /></div>
-                            <p class="nomeUsuario">Lion-O</p>
-                        </div>
-                        <img src="img/option.PNG" class="opcoes" alt="" />
-                    </div>
-                    <img src="img/eng-software.jpg" class="publicar-imagem" alt="" />
-                    <div class="publicar-conteudo">
-                        <div class="reacao-contenitor">
-                            <img src="img/like.PNG" class="icone" alt="" />
-                            <img src="img/comment.PNG" class="icone" alt="" />
-                            <img src="img/send.PNG" class="icone" alt="" />
-                            <img src="img/save.PNG" class="salvar icone" alt="" />
-                        </div>
-                        <p class="curtidas">2,040 curtidas</p>
-                        <p class="descricao"><span>Lion-O </span> O engenheiro de software cuida de toda a parte técnica e científica
-                            dos sistemas, desde o desenvolvimento até a gestão. Ele pode cuidar tanto das aplicações visíveis aos usuários
-                            (que é chamada de front-end) quanto dos bastidores –– nesse caso, o back-end.</p>
-                        <p class="publicado-tempo">Há 57 minutos</p>
-                    </div>
-                    <div class="comentario-contenitor">
-                        <img src="img/smile.PNG" class="icone" alt="" />
-                        <input type="text" class="comentario-box" placeholder="Adicione um comentário" />
-                        <button id="publicar" class="comentario-btn">Publicar</button>
-                    </div>
+                <div class="publish">
+                    <form method="POST" action="index2.php" enctype="multipart/form-data">
+                        <br />
+                        <textarea placeholder="Escrever uma nova publicação" name="texto"></textarea>
+                        <label for="file-input">
+                            <div class="icon"><a href="./fotos/"><i class="fa-solid fa-camera" alt="Inserir uma Fotografia"></i></a></div>
+                        </label>
+                        <input type="submit" value="Publicar" name="publish" />
+                        <input type="file" id="file-input" name="file" hidden />
+                    </form>
                 </div>
             </div>
         </div>

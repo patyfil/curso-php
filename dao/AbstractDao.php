@@ -1,11 +1,12 @@
-<?php 
+<?php
 
 //classe abstrata: servir para abstração (trabalhar herança)
 //não cria instâncias a partir desta classe
 //permite ter métodos abstratos - não tem corpo (somente assinatura)
 //permite ter métodos concretos - os têm corpo
 
-abstract class AbstractDao implements IComumDao {
+abstract class AbstractDao implements IComumDao
+{
 
     //Modificadores de visibilidade
     //private = restrito somente ao escopo da classe
@@ -23,7 +24,4 @@ abstract class AbstractDao implements IComumDao {
             throw $th;
         }
     }
-
 }
-
-

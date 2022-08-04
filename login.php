@@ -34,7 +34,7 @@
 							<label for="conectado">Manter conectado</label>
 						</div>
 						<input type="submit" name="submit" value="Entrar" id="botao">
-						<p>É novo aqui?<a href="formulario.html"> Criar conta</a></p>
+						<p>É novo aqui?<a href="formulario.php"> Criar conta</a></p>
 					</div>
 				</form>
 			</div>

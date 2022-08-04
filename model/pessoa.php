@@ -1,5 +1,7 @@
 <?php
 
+// namespace model;
+
 class Pessoa
 {
     private $id;
@@ -11,6 +13,11 @@ class Pessoa
     private $dataCadastro;
     private $publicacoes;
     private $amigos; //tipo Pessoa
+    private $fone;
+    private $cidade;
+    private $estado;
+    private $dataNasc;
+    private $genero;
 
     public function __construct()
     {
@@ -124,5 +131,66 @@ class Pessoa
     public function adicionarAmigo($amigo) //único amigo
     {
         $this->amigos[] = $amigo;
+    }
+
+    public function getFone()
+    {
+        return $this->fone;
+    }
+
+    public function setFone($fone)
+    {
+        $this->fone = $fone;
+
+        return $this;
+    }
+
+    public function getCidade()
+    {
+        return $this->cidade;
+    }
+
+
+    public function setCidade($cidade)
+    {
+        $this->cidade = $cidade;
+
+        return $this;
+    }
+
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    public function setEstado($estado)
+    {
+        $this->estado = $estado;
+
+        return $this;
+    }
+
+    public function getDataNasc()
+    {
+        return $this->dataNasc;
+    }
+
+    public function setDataNasc($dataNasc)
+    {
+        $this->dataNasc = $dataNasc;
+
+        return $this;
+    }
+
+    public function getGenero()
+    {
+        return $this->genero;
+    }
+
+    public function setGenero($genero)
+    {
+        $this->genero = $genero;
+
+        return $this;
     }
 }

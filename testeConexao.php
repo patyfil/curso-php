@@ -9,20 +9,20 @@
 </head>
 
 <body>
-    <h1>Teste conexão banco de dados</h1>
+    <h1>Teste de conexão com o banco de dados</h1>
     <?php
     require "dao/conexao.php";
-
     try {
+
         $conexao = Conexao::getConnection();
-        echo "Conexão realizada com sucesso!";
-        
+        echo "<h2>Conexão realizada com sucesso!</h2>";
+
+        // para testar a função clone do arquivo conexao.php linha 31
+        // $conexao2 = $conexao->clone();
+
     } catch (\Throwable $e) {
-        echo "Erro ao conectar com banco de dados: ". $e->getMessage();
-    }
-   
-
-
+        echo "Erro ao conectar com o banco de dados: " . $e->getMessage();
+     } 
     ?>
 </body>
 
