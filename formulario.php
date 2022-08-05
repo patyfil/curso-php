@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // echo "Usuário cadastrado com sucesso!";
     echo "<script language=javascript>alert('Usuário cadastrado com sucesso!');</script>";
-    echo "<script language=javascript>window.location.replace('index.php');</script>";
+    echo "<script language=javascript>window.location.replace('login.php');</script>";
   } catch (\Throwable $th) {
     echo "Erro: " . $th->getMessage();
   }
@@ -183,7 +183,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <!-- *********************************** DATA DE NASCIMENTO *********************************** -->
           <br />
           <label for="data_nascimento"><b>Data de Nascimento: </b></label>
-          <input type="date" name="data_nascimento" id="data_nascimento" />
+          <input type="text" name="data_nascimento" id="data_nascimento" onkeypress="$(this).mask('00/00/0000')" />
           <br />
           <!-- *********************************** GÊNERO *********************************** -->
           <p>Sexo:</p>

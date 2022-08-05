@@ -24,7 +24,7 @@
                 $pessoa = $dao->logar($dto);
 
                 $_SESSION["usuario_logado"] = serialize($pessoa);
-                header("Location: index2.php");
+                header("Location: index.php");
             } catch (\Throwable $th) {
                 echo $th->getMessage();
                 // echo "Erro: " . $th->getMessage();
