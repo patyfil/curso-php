@@ -89,7 +89,8 @@ class PessoaDao extends AbstractDao
     public function logar($dto)
     {
 
-        $sql = "select * from Pessoa where PessoaNick = ? and PessoaSenha = ?";
+        // $sql = "select * from Pessoa where PessoaNick = ? and PessoaSenha = ?";
+        $sql = "select * from Pessoa where (PessoaEmail OR PessoaNick)=? AND PessoaSenha= ?";
         $st = $this->conexao->prepare($sql);
         $st->bindValue(1, $dto->getLogin(), PDO::PARAM_STR);
         $st->bindValue(2, $dto->getSenha(), PDO::PARAM_STR);

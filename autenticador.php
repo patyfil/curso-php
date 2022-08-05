@@ -5,9 +5,9 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //echo "Processando o formulário com post!";
-        if (isset($_POST["user"]) && isset($_POST["pass"])) {
+        if (isset($_POST["login"]) && isset($_POST["pass"])) {
             //processar meu login
-            $login = $_POST["user"];
+            $login = $_POST["login"];
             $senha = $_POST["pass"];
 
             /* Se o campo usuário ou senha estiverem vazios geramos um alerta */
@@ -18,13 +18,13 @@
 
             try {
                 $dao = new PessoaDao();
-
+                
                 $dto = new LoginDto($login, $senha);
 
                 $pessoa = $dao->logar($dto);
 
                 $_SESSION["usuario_logado"] = serialize($pessoa);
-                header("Location: index.php");
+                header("Location: index2.php");
             } catch (\Throwable $th) {
                 echo $th->getMessage();
                 // echo "Erro: " . $th->getMessage();

@@ -94,6 +94,11 @@ nav .navbar {
     align-items: center;
     width: 100%;
     padding: 10px 10px;
+    color: var(--fundo-escuro);
+}
+
+.icon:hover{
+    color: var(--fundo-claro);
 }
 
 /* Cor dos ícones */
@@ -284,7 +289,7 @@ nav .navbar {
     height: 30px;
     border-radius: 3px;
     border: none;
-    background: #3E537A;
+    background: var(--fundo-escuro);
     color: #FFF;
     float: right;
     margin-top: 10px;
@@ -293,7 +298,7 @@ nav .navbar {
 }
 
 .publish input:hover {
-    background: #001f3f;
+    background: var(--fundo-claro);
 }
 
 

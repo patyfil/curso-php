@@ -1,13 +1,11 @@
 <?php
 
-// namespace dao;
-
 class PublicacaoDao extends AbstractDao { //A class PublicacaoDao está herdando os atributos e métodos da class AbstractDao
 
     public function salvar($obj) {
 
         //sql inject: injeção de código sql - adicionar código malicioso
-        $sql = "insert into publicacao (PubAutor, PubData, PubFoto, PubTexto, PubCurtidas) values (?, ?, ?, ?)";
+        $sql = "insert into publicacao (PubAutor, PubData, PubFoto, PubTexto, PubCurtidas) values (?, ?, ?, ?, ?)";
         //Statement
         $st = $this->conexao->prepare($sql);
         $st->bindValue(1, $obj->getAutor()->getId(), PDO::PARAM_INT); 

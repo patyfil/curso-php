@@ -6,7 +6,7 @@ require_once "funcoes.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
-        $publicacao = new Publicacao;
+        $publicacao = new Publicacao();
         $dao = new PublicacaoDao;
 
         //desafio: realizar o tratamentos verificando a existencia do valor
@@ -103,7 +103,7 @@ $pessoa = verificaLogado(); //chamada da função
             <div class="navDir">
                 <div class="item">
                     <div class="tooltip"><?php echo $pessoa->getNick(); ?></div>
-                    <div class="icon"><?php echo $pessoa->getFoto($pessoa) ?></div>
+                    <div class="icon"><?php echo $pessoa->getFoto("foto") ?></div>
                     <!-- <img src="img/cheetara.jpg" alt="" /> -->
                 </div>
                 <div class="item">
@@ -184,11 +184,15 @@ $pessoa = verificaLogado(); //chamada da função
                     <form method="POST" action="index2.php" enctype="multipart/form-data">
                         <br />
                         <textarea placeholder="Escrever uma nova publicação" name="texto"></textarea>
-                        <label for="file-input">
-                            <div class="icon"><a href="./fotos/"><i class="fa-solid fa-camera" alt="Inserir uma Fotografia"></i></a></div>
+                        <label class="item" for="file-input">
+                            <div class="icon"><a><i class="fa-solid fa-camera" alt="Inserir uma Fotografia"></i></a>
+                                <input type="file" name="foto" id="file-input" name="foto" hidden accept="image/*" />
+
+                            </div>
                         </label>
+
+
                         <input type="submit" value="Publicar" name="publish" />
-                        <input type="file" id="file-input" name="file" hidden />
                     </form>
                 </div>
             </div>
