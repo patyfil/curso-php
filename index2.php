@@ -6,7 +6,7 @@ require_once "funcoes.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
-        $publicacao = new Publicacao();
+        $publicacao = new Publicacao($obj);
         $dao = new PublicacaoDao;
 
         //desafio: realizar o tratamentos verificando a existencia do valor

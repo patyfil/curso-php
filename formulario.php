@@ -76,6 +76,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 </head>
 
 <body>
@@ -113,17 +116,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <br /><br />
           <!-- *********************************** SENHA *********************************** -->
           <div id="senha1" class="inputBox">
-            <input type="password" name="senha" id="senha" class="inputUser" required>
+            <input type="password" name="senha" id="senha" class="inputUser" required />
             <label for="senha" class="labelInput">Senha:</label>
           </div>
           <div id="senha2" class="inputBox">
-            <input type="password" name="confsenha" id="confsenha" class="inputUser" required>
+            <input type="password" name="confsenha" id="confsenha" class="inputUser" required />
             <label for="confsenha" class="labelInput">Confirme a Senha:</label>
           </div>
           <br /><br /><br />
           <!-- *********************************** TELEFONE *********************************** -->
           <div class="inputBox">
-            <input type="tel" name="telefone" id="telefone" class="inputUser" required />
+            <input type="tel" name="telefone" id="telefone" class="inputUser" onkeypress="$(this).mask('(00) 0000-00009')" required />
             <label for="telefone" class="labelInput">Telefone:</label>
           </div>
           <br /><br />
