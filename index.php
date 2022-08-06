@@ -17,38 +17,41 @@ function verificaLogado()
 session_start();
 $pessoa = verificaLogado(); //chamada da função
 
+// $foto = uploadFotos("name");
+// $arquivo = uploadFotos($_FILES["name"]);
+// $PessoaFoto->setFoto($foto);
 
 // **************************************************  PUBLICAÇÃO NO BANCO DE DADOS
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    try {
-        $publicacao = new Publicacao($autor);
-        $dao = new PublicacaoDao;
+//     try {
+//         $publicacao = new Publicacao($autor);
+//         $dao = new PublicacaoDao;
 
-        if (!($_POST['texto'] || $_POST['foto'])) {
-            echo "<script language=javascript>
-            alert('Por favor, preencha todos os campos!');
-        </script>";
-        //     echo "<script language=javascript>
-        //     window.location.replace('index.php');
-        // </script>";
-        }
+//         if (!($_POST['texto'] || $_POST['foto'])) {
+//             echo "<script language=javascript>
+//             alert('Por favor, preencha todos os campos!');
+//         </script>";
+//             //     echo "<script language=javascript>
+//             //     window.location.replace('index.php');
+//             // </script>";
+//         }
 
-        $foto = uploadFotos($_FILES["foto"]);
-        $publicacao->setFoto($foto);
-        $publicacao->setTexto($_POST["texto"]);
+//         $foto = uploadFotos($_FILES["foto"]);
+//         $publicacao->setFoto($foto);
+//         $publicacao->setTexto($_POST["texto"]);
 
 
-        $dao->salvar($publicacao);
+//         $dao->salvar($publicacao);
 
-        // echo "Usuário cadastrado com sucesso!";
-        echo "<script language=javascript>alert('Publicação postada com sucesso!');</script>";
-        echo "<script language=javascript>window.location.replace('index.php');</script>";
-    } catch (\Throwable $th) {
-        echo "Erro: " . $th->getMessage();
-    }
-}
+//         // echo "Usuário cadastrado com sucesso!";
+//         echo "<script language=javascript>alert('Publicação postada com sucesso!');</script>";
+//         echo "<script language=javascript>window.location.replace('index.php');</script>";
+//     } catch (\Throwable $th) {
+//         echo "Erro: " . $th->getMessage();
+//     }
+// }
 ?>
 
 <!--Esta é a página pessoal do usuário-->
@@ -90,9 +93,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div class="navDir">
                 <div class="item">
-                    <div class="tooltip"><?php echo $pessoa->getNick() ?></div>
-                    <div class="icon"><?php echo $pessoa->getFoto() ?></div>
-                    <!-- <img src="img/cheetara.jpg" alt="" /> -->
+                    <div class="tooltip"><?php echo $pessoa->getNick(); ?></div>
+                    <div class="iconFoto">
+                        <img width="40" height="40" src="<?php echo 'fotos/' . $pessoa->getFoto('PessoaFoto'); ?>" />
+                    </div>
                 </div>
                 <div class="item">
                     <div class="tooltip">Home</div>

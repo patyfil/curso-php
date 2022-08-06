@@ -75,15 +75,15 @@ nav .navbar {
 /* Configuração das Legendas quando passa o mouse em cima dos ícones */
 .tooltip {
     position: absolute;
-    padding: 5px 5px;
+    padding: 10px 5px;
     white-space: nowrap;
     left: 50%;
     top: 30px;
     font-size: 14px;
     font-family: 'Ubuntu', sans-serif;
-    color: var(--fundo-claro);
+    color: var(--fundo-medio);
 }
-
+/* FIM da Legenda / tooltip */
 /* Configuração dos ícones */
 .icon {
     font-size: 30px;
@@ -97,8 +97,20 @@ nav .navbar {
     color: var(--fundo-escuro);
 }
 
-.icon:hover{
+.icon:hover {
     color: var(--fundo-claro);
+}
+/* Configuração da imagem do perfil */
+.iconFoto img {
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+.iconFoto {
+    /* background: 3px linear-gradient(45deg, var(--fundo-claro), var(--fundo-escuro) 80%); */
+    border-radius: 50%;
+    border: 2px solid var(--fundo-escuro);
+    padding: 2px;
 }
 
 /* Cor dos ícones */
@@ -110,19 +122,6 @@ nav .navbar {
 .icon a:hover {
     color: var(--fundo-claro);
 }
-
-.icon img {
-    width: 50%;
-    height: 50%;
-    position: relative;
-    cursor: pointer;
-    align-items: center;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 1px solid #fff;
-}
-
-/* FIM da Legenda / tooltip */
 
 /* ========= Estilo da barra de pesquisa =========*/
 .pesquisar-box {
@@ -276,7 +275,7 @@ nav .navbar {
     padding-top: 5px;
 }
 
-.publish .icon{
+.publish .icon {
     margin-top: 10px;
     margin-left: 20px;
     width: 40px;
