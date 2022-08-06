@@ -17,6 +17,38 @@ function verificaLogado()
 session_start();
 $pessoa = verificaLogado(); //chamada da função
 
+
+// **************************************************  PUBLICAÇÃO NO BANCO DE DADOS
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    try {
+        $publicacao = new Publicacao($autor);
+        $dao = new PublicacaoDao;
+
+        if (!($_POST['texto'] || $_POST['foto'])) {
+            echo "<script language=javascript>
+            alert('Por favor, preencha todos os campos!');
+        </script>";
+        //     echo "<script language=javascript>
+        //     window.location.replace('index.php');
+        // </script>";
+        }
+
+        $foto = uploadFotos($_FILES["foto"]);
+        $publicacao->setFoto($foto);
+        $publicacao->setTexto($_POST["texto"]);
+
+
+        $dao->salvar($publicacao);
+
+        // echo "Usuário cadastrado com sucesso!";
+        echo "<script language=javascript>alert('Publicação postada com sucesso!');</script>";
+        echo "<script language=javascript>window.location.replace('index.php');</script>";
+    } catch (\Throwable $th) {
+        echo "Erro: " . $th->getMessage();
+    }
+}
 ?>
 
 <!--Esta é a página pessoal do usuário-->
@@ -28,7 +60,7 @@ $pessoa = verificaLogado(); //chamada da função
     <title>Home - Logado</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/index2.css" type="text/css" />
+    <link rel="stylesheet" href="css/index.css" type="text/css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
     <!-- ícones  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
@@ -137,7 +169,7 @@ $pessoa = verificaLogado(); //chamada da função
                     <h2><?php echo $pessoa->getNome(); ?></h2>
                 </div>
                 <div class="publish">
-                    <form method="POST" action="index2.php" enctype="multipart/form-data">
+                    <form method="POST" action="index.php" enctype="multipart/form-data">
                         <br />
                         <textarea placeholder="Escrever uma nova publicação" name="texto"></textarea>
                         <label class="item" for="file-input">

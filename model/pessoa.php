@@ -1,7 +1,5 @@
 <?php
 
-// namespace model;
-
 class Pessoa
 {
     private $id;

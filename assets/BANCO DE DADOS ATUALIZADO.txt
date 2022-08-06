@@ -1,13 +1,12 @@
 -- SQL para o Projeto da Rede Social de Fotos
 -- Version 1.0 (02/07/2022)
 -- Autor: Prof. Rodrigo Cezario da Silva
--- Alunas: Patrícia e Savana
 
 --
--- Banco de dados: `wecode`
+-- Banco de dados: `fotoweb`
 --
-CREATE DATABASE IF NOT EXISTS wecode DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE wecode;
+CREATE DATABASE IF NOT EXISTS `fotoweb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `fotoweb`;
 
 --
 -- Estrutura para tabela `Pessoa`

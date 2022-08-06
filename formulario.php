@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   try {
     $pessoa = new Pessoa;
     $dao = new PessoaDao;
+    // $dto = new LoginDto($login, $senha);
 
     //desafio: realizar o tratamentos verificando a existencia do valor
     //desafio 2: usar DTO
@@ -24,11 +25,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       throw new Exception("As senhas informadas são diferentes!");
     }
     $pessoa->setSenha($_POST["senha"]);
-
+    //Primeiro cadastrar senha pra depois fazer upload de fotos
     $foto = uploadFotos($_FILES["foto"]);
     $pessoa->setFoto($foto);
 
     $dao->salvar($pessoa);
+    // $dto->getLogin($login);
 
     // echo "Usuário cadastrado com sucesso!";
     echo "<script language=javascript>alert('Usuário cadastrado com sucesso!');</script>";

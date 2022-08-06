@@ -1,23 +1,5 @@
 <?php
 
-/*
-* public - fará com que não haja ocultação nenhuma, toda propriedade ou método declarado com public 
-serão acessíveis por todos que quiserem acessá-los, 
-utiliza-se public para os métodos de interface, isso é, 
-as operações que queremos que outros possam executar em nossos objetos. 
-
-* Private: Ao contrário do public, esse modificador faz com que qualquer método ou propriedade 
-seja visível só e somente só pela classe que a declarou, 
-ninguém terá acesso a essas propriedades ou métodos diretamente, 
-o acesso será possível somente através de métodos de interface. 
-
-* Protected: A visibilidade protegida é como um mix da pública com a privada. 
-A visibilidade protected faz com que todos os herdeiros vejam as propriedades ou métodos protegidos 
-como se fossem públicos porém, do lado de fora, um outro objeto não conseguirá acessar diretamente 
-essas informações já que, do lado de fora é como se fosse privada. 
-
-*/
-
 class Publicacao
 {
     private $id;
@@ -96,3 +78,22 @@ class Publicacao
         return sizeof($this->curtidas); //quantidade de curtidas
     }
 }
+
+
+/*
+* public - fará com que não haja ocultação nenhuma, toda propriedade ou método declarado com public 
+serão acessíveis por todos que quiserem acessá-los, 
+utiliza-se public para os métodos de interface, isso é, 
+as operações que queremos que outros possam executar em nossos objetos. 
+
+* Private: Ao contrário do public, esse modificador faz com que qualquer método ou propriedade 
+seja visível só e somente só pela classe que a declarou, 
+ninguém terá acesso a essas propriedades ou métodos diretamente, 
+o acesso será possível somente através de métodos de interface. 
+
+* Protected: A visibilidade protegida é como um mix da pública com a privada. 
+A visibilidade protected faz com que todos os herdeiros vejam as propriedades ou métodos protegidos 
+como se fossem públicos porém, do lado de fora, um outro objeto não conseguirá acessar diretamente 
+essas informações já que, do lado de fora é como se fosse privada. 
+
+*/

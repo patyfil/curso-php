@@ -10,12 +10,11 @@
 
 <body>
     <h1>Página de teste</h1>
-    <?php
 
+    <?php
     require_once "configuracoes.php";
 
     try {
-
 
         $pessoaDao = new PessoaDao;
 
@@ -41,10 +40,6 @@
     } catch (\Throwable $th) {
         "Erro: " . $th->getMessage();
     }
-
-
-
-
     ?>
 
 </body>
