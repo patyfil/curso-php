@@ -1,7 +1,9 @@
 <?php
 
+
 class Pessoa
 {
+
     private $id;
     private $nome;
     private $nick;
@@ -10,12 +12,7 @@ class Pessoa
     private $foto;
     private $dataCadastro;
     private $publicacoes;
-    private $amigos; //tipo Pessoa
-    private $fone;
-    private $cidade;
-    private $estado;
-    private $dataNasc;
-    private $genero;
+    private $amigos;
 
     public function __construct()
     {
@@ -38,10 +35,10 @@ class Pessoa
         return $this->nome;
     }
 
+    //builder
     public function setNome($nome)
     {
         $this->nome = $nome;
-        return $this; // interface fluente
     }
 
     public function getNick()
@@ -126,69 +123,8 @@ class Pessoa
         return $this;
     }
 
-    public function adicionarAmigo($amigo) //único amigo
+    public function adicionarAmigo($amigo) //unico amigo
     {
         $this->amigos[] = $amigo;
-    }
-
-    public function getFone()
-    {
-        return $this->fone;
-    }
-
-    public function setFone($fone)
-    {
-        $this->fone = $fone;
-
-        return $this;
-    }
-
-    public function getCidade()
-    {
-        return $this->cidade;
-    }
-
-
-    public function setCidade($cidade)
-    {
-        $this->cidade = $cidade;
-
-        return $this;
-    }
-
-    public function getEstado()
-    {
-        return $this->estado;
-    }
-
-    public function setEstado($estado)
-    {
-        $this->estado = $estado;
-
-        return $this;
-    }
-
-    public function getDataNasc()
-    {
-        return $this->dataNasc;
-    }
-
-    public function setDataNasc($dataNasc)
-    {
-        $this->dataNasc = $dataNasc;
-
-        return $this;
-    }
-
-    public function getGenero()
-    {
-        return $this->genero;
-    }
-
-    public function setGenero($genero)
-    {
-        $this->genero = $genero;
-
-        return $this;
     }
 }

@@ -99,19 +99,6 @@ legend b {
   width: 45%;
   float: right;
 }
-/* Dividindo o campo Cidade e Estado em duas partes na mesma linha*/
-#city {
-  width: 45%;
-  padding-right: 5%;
-  float: left;
-}
-#uf {
-  width: 45%;
-  float: right;
-}
-select#uf {
-  width: 55%;
-}
 
 .labFoto {
   margin-top: 10px;
@@ -129,16 +116,6 @@ select#uf {
     inset 0 -1px 0 rgba(255, 255, 255, .25),
     inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 0 rgba(255, 255, 255, .5);
   background-color: rgba(0, 0, 0, 0.15);
-}
-
-/* Fonte */
-#data_nascimento {
-  border: none;
-  padding: 8px;
-  border-radius: 10px;
-  outline: none;
-  font-size: 15px;
-  color: var(--fundo-escuro);
 }
 
 #botao {

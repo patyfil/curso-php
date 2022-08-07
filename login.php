@@ -27,8 +27,8 @@
 				<!-- Aqui temos o formulário-->
 				<form action="autenticador.php" method="POST">
 					<div id="areaCampos">
-						<input class="campos" type="login" name="login" size="25" placeholder="Usuário">
-						<input class="campos" type="password" name="pass" size="15" placeholder="Senha">
+						<input class="campos" type="text" name="login" size="25" placeholder="Usuário (e-mail ou nick)">
+						<input class="campos" type="password" name="senha" size="15" placeholder="Senha">
 						<div id="manterConectado">
 							<input type="checkbox" id="conectado">&nbsp;
 							<label for="conectado">Manter conectado</label>

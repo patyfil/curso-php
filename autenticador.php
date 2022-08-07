@@ -5,12 +5,12 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //echo "Processando o formulário com post!";
-        if (isset($_POST["login"]) && isset($_POST["pass"])) {
-            //processar meu login
+        if (isset($_POST["login"]) && isset($_POST["senha"])) {
+            //processar meu login/salvando login e senha nas variáveis
             $login = $_POST["login"];
-            $senha = $_POST["pass"];
+            $senha = $_POST["senha"];
 
-            /* Se o campo usuário ou senha estiverem vazios geramos um alerta */
+            /* Se o campo login ou senha estiverem vazios geramos um alerta */
             if ($login == "" || $senha == "") {
                 echo "<script language=javascript>alert('Por favor, preencha todos os campos!');</script>";
                 echo "<script language=javascript>window.location.replace('login.php');</script>";

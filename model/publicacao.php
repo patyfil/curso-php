@@ -2,18 +2,20 @@
 
 class Publicacao
 {
+
     private $id;
     private $autor; //tipo Pessoa
     private $data;
     private $foto;
     private $texto;
-    private $curtidas; //lista de pessoas que curtiram
+    private $curtidas; //lista
 
     public function __construct($autor)
     {
         $this->autor = $autor;
         $this->curtidas = [];
     }
+
     public function getId()
     {
         return $this->id;

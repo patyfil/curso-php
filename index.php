@@ -23,35 +23,28 @@ $pessoa = verificaLogado(); //chamada da função
 
 // **************************************************  PUBLICAÇÃO NO BANCO DE DADOS
 
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-//     try {
-//         $publicacao = new Publicacao($autor);
-//         $dao = new PublicacaoDao;
+    try {
+        $publicacao = new Publicacao('PessoaID');
+        $publicacao->getAutor();
+        $dao = new PublicacaoDao;
 
-//         if (!($_POST['texto'] || $_POST['foto'])) {
-//             echo "<script language=javascript>
-//             alert('Por favor, preencha todos os campos!');
-//         </script>";
-//             //     echo "<script language=javascript>
-//             //     window.location.replace('index.php');
-//             // </script>";
-//         }
+        $publicacao->setTexto($_POST["texto"]);
 
-//         $foto = uploadFotos($_FILES["foto"]);
-//         $publicacao->setFoto($foto);
-//         $publicacao->setTexto($_POST["texto"]);
+        $foto = uploadFotos($_FILES["foto"]);
+        $publicacao->setFoto($foto);
 
 
-//         $dao->salvar($publicacao);
+        $dao->salvar($publicacao);
 
-//         // echo "Usuário cadastrado com sucesso!";
-//         echo "<script language=javascript>alert('Publicação postada com sucesso!');</script>";
-//         echo "<script language=javascript>window.location.replace('index.php');</script>";
-//     } catch (\Throwable $th) {
-//         echo "Erro: " . $th->getMessage();
-//     }
-// }
+        // echo "Publicação realizada com sucesso!";
+        echo "<script language=javascript>alert('Publicação realizada com sucesso!');</script>";
+        echo "<script language=javascript>window.location.replace('index.php');</script>";
+    } catch (\Throwable $th) {
+        echo "Erro: " . $th->getMessage();
+    }
+}
 ?>
 
 <!--Esta é a página pessoal do usuário-->
@@ -178,12 +171,10 @@ $pessoa = verificaLogado(); //chamada da função
                         <textarea placeholder="Escrever uma nova publicação" name="texto"></textarea>
                         <label class="item" for="file-input">
                             <div class="icon"><a><i class="fa-solid fa-camera" alt="Inserir uma Fotografia"></i></a>
-                                <input type="file" name="foto" id="file-input" name="foto" hidden accept="image/*" />
+                                <input type="file" name="foto" id="file-input" accept="image/*" hidden/>
 
                             </div>
                         </label>
-
-
                         <input type="submit" value="Publicar" name="publish" />
                     </form>
                 </div>
@@ -194,16 +185,6 @@ $pessoa = verificaLogado(); //chamada da função
     <section class="principal">
         <div class="involucro">
             <div class="col-direita">
-                <div class="perfil-ficha">
-                    <div class="perfil-pic">
-                        <img src="img/profile-pic.jpg" alt="" />
-                    </div>
-                    <div>
-                        <p class="nomeUsuario">Sabedoria_de_Ioda</p>
-                        <p class="sub-texto">Rodrigo Cezario</p>
-                    </div>
-                    <button class="acao-btn">Mudar</button>
-                </div>
                 <p class="sugestao-texto">Sugestões para você</p>
                 <div class="perfil-ficha">
                     <div class="perfil-pic">

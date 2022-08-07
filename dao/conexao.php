@@ -23,7 +23,7 @@ class Conexao { // stdClass
             // self::$conexao = new PDO("mysql:host=localhost;port=$port;dbname=fotoweb", "root", "");
 
             //Conexão sem a porta
-            self::$conexao = new PDO('mysql:host=localhost;dbname=wecode;charset=utf8', 'root', '');
+            self::$conexao = new PDO('mysql:host=localhost;dbname=fotoweb;charset=utf8', 'root', '');
         } // Se existir uma conexão, então ele retorna a conexão.
         return self::$conexao;
     }

@@ -7,8 +7,7 @@ class PessoaDao extends AbstractDao
     {
 
         //sql inject: injeção de código sql - adicionar código malicioso
-        $sql = "INSERT INTO Pessoa (PessoaNome, PessoaNick, PessoaEmail, PessoaFoto, PessoaSenha,  
-        PessoaFone, PessoaCidade, PessoaEstado, PessoaGenero, PessoaDataNasc, PessoaDataCad) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO Pessoa (PessoaNome, PessoaNick, PessoaEmail, PessoaFoto, PessoaSenha, PessoaDataCad) VALUES (?, ?, ?, ?, ?, ?)";
         //Statement
         $st = $this->conexao->prepare($sql);
         $st->bindValue(1, $obj->getNome(), PDO::PARAM_STR);
@@ -16,16 +15,11 @@ class PessoaDao extends AbstractDao
         $st->bindValue(3, $obj->getEmail(), PDO::PARAM_STR);
         $st->bindValue(4, $obj->getFoto(), PDO::PARAM_STR);
         $st->bindValue(5, $obj->getSenha(), PDO::PARAM_STR);
-        $st->bindValue(6, $obj->getFone(), PDO::PARAM_STR);
-        $st->bindValue(7, $obj->getCidade(), PDO::PARAM_STR);
-        $st->bindValue(8, $obj->getEstado(), PDO::PARAM_STR);
-        $st->bindValue(9, $obj->getGenero(), PDO::PARAM_STR);
-        $st->bindValue(10, $obj->getDataNasc(), PDO::PARAM_STR);
 
         $data = new DateTime();
         // 26/07/2022 - Brasil
         // 2022-07-26
-        $st->bindValue(11, $data->format("Y-m-d H:i:s"), PDO::PARAM_STR);
+        $st->bindValue(6, $data->format("Y-m-d H:i:s"), PDO::PARAM_STR);
         $st->execute();
     }
 
@@ -35,7 +29,7 @@ class PessoaDao extends AbstractDao
 
     public function excluir($id)
     {
-        $sql = "DELETE from Pessoa where PessoaID = ?";
+        $sql = "DELETE FROM Pessoa WHERE PessoaID = ?";
         $st = $this->conexao->prepare($sql);
         $st->bindValue(1, $id, PDO::PARAM_INT);
         $st->execute();

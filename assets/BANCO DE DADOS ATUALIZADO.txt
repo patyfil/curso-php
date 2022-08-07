@@ -19,13 +19,9 @@ CREATE TABLE `Pessoa` (
   `PessoaEmail` VARCHAR(80) NOT NULL,
   `PessoaFoto` VARCHAR(20) NULL,
   `PessoaSenha` VARCHAR(20) NOT NULL,
-  `PessoaFone` VARCHAR(15) NOT NULL,
-  `PessoaCidade` VARCHAR(30) NOT NULL,
-  `PessoaEstado` VARCHAR(20) NOT NULL,
-  `PessoaGenero` VARCHAR(20) NOT NULL,
-  `PessoaDataNasc` VARCHAR(10) NOT NULL,
   `PessoaDataCad` DATETIME NOT NULL
 );
+
 
 --
 -- Estrutura para tabela `Publicacao`
@@ -35,10 +31,10 @@ CREATE TABLE `Publicacao` (
   `PubID` INTEGER NOT NULL,
   `PessoaID` INTEGER NOT NULL,
   `PubData` DATETIME NOT NULL,
-  `PubFoto` VARCHAR (20) NOT NULL,
-  `PubTexto` TEXT NULL,
-  `PubCurtidas` int(10) NOT NULL
+  `PubArquivo` VARCHAR(20) NOT NULL,
+  `PubTexto` TEXT NULL
 );
+
 
 --
 -- Estrutura para tabela `Curtida`
@@ -63,14 +59,12 @@ CREATE TABLE `PessoaAmigos` (
 --
 -- Índices de tabela `Pessoa`
 --
-
 ALTER TABLE `Pessoa`
   ADD PRIMARY KEY (`PessoaID`);
 
 --
 -- Índices de tabela `Publicacao`
 --
-
 ALTER TABLE `Publicacao`
   ADD PRIMARY KEY (`PubID`),
   ADD KEY `fk_publicacao_pessoa` (`PessoaID`);
@@ -78,7 +72,6 @@ ALTER TABLE `Publicacao`
 --
 -- Índices de tabela `PessoaAmigos`
 --
-
 ALTER TABLE `PessoaAmigos`
   ADD PRIMARY KEY (`PesAmID`),
   ADD UNIQUE KEY `PessoaID` (`PessoaID`,`AmigoID`);
@@ -86,11 +79,11 @@ ALTER TABLE `PessoaAmigos`
 --
 -- Índices de tabela `Curtida`
 --
-
 ALTER TABLE `Curtida`
   ADD PRIMARY KEY (`CurtID`),
   ADD KEY `fk_curtida_publicacao` (`PubID`),
   ADD KEY `fk_curtida_pessoa` (`PessoaID`);
+
 
 --
 -- AUTO_INCREMENT de tabela `Curtida`
@@ -115,7 +108,6 @@ ALTER TABLE `PessoaAmigos`
 --
 ALTER TABLE `Publicacao`
   MODIFY `PubID` INTEGER NOT NULL AUTO_INCREMENT;
-
 
 --
 -- Restrições para tabelas `Curtida`

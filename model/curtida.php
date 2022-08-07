@@ -2,13 +2,12 @@
 
 class Curtida
 {
-
     private $id;
-    private $amigo;
+    private $pessoa;
 
-    public function __construct($amigo)
+    public function __construct($pessoa)
     {
-        $this->amigo = $amigo;
+        $this->pessoa = $pessoa;
     }
 
     public function getId()
@@ -22,8 +21,8 @@ class Curtida
         return $this;
     }
 
-    public function getAmigo()
+    public function getPessoa()
     {
-        return $this->amigo;
+        return $this->pessoa;
     }
 }

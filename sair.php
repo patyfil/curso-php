@@ -1,4 +1,3 @@
-
 <?php
 session_start(); //Inicia a sessão, pega a sessão que já foi iniciada.
 session_unset(); //Exclui apenas as variáveis ​​da sessão se a sessão ainda existe.
