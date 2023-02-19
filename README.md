@@ -19,6 +19,8 @@
 ## Publicação de Fotos   
 ![4 - Publicação](https://user-images.githubusercontent.com/41968938/219979867-c62b27ab-97be-4b59-b34a-126191f541b3.jpg)
 
+## Banco de dados - phpMyAdmin  
+![5 - Banco de Dados - phpMyAdmin](https://user-images.githubusercontent.com/41968938/219980077-64dbec33-1b9b-4311-8317-9c9d6a96f4f7.jpg)
 
 
 ## 🔨 Tecnologias 
