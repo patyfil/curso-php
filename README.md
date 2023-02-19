@@ -6,6 +6,20 @@
 
 <p align="left">Professor Rodrigo Cezario da Silva</p>
 
+## Tela de Login  
+![1 - WeCode](https://user-images.githubusercontent.com/41968938/219979819-32e0618f-7f48-4dd6-9485-0ad60e058980.jpg)
+
+
+## Formulário para cadastrar usuário  
+![2 - Formulário Criar Conta](https://user-images.githubusercontent.com/41968938/219979838-397fe876-98c6-4200-8a5f-a7b50f435553.jpg)
+
+## Tela Inicial da Rede Social  
+![3 - Login](https://user-images.githubusercontent.com/41968938/219979852-8975071c-9055-485b-ad11-4394d100ad1b.jpg)
+
+## Publicação de Fotos   
+![4 - Publicação](https://user-images.githubusercontent.com/41968938/219979867-c62b27ab-97be-4b59-b34a-126191f541b3.jpg)
+
+
 
 ## 🔨 Tecnologias 
 As seguintes ferramentas foram usadas na construção do projeto:
